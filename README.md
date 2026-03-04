@@ -25,6 +25,7 @@
 - [Tech Stack](#tech-stack)
 - [Contributing](#contributing)
 - [License](#license)
+- [Acknowledgements](#acknowledgements)
 - [Author](#author)
 
 ---
@@ -358,6 +359,22 @@ Contributions are welcome! Here's how:
 ## License
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+
+> **Educational Use Disclaimer:** The concepts, techniques, and project ideas in this repository are based on learnings from **Udemy MLOps / Machine Learning bootcamp courses**. All code has been written, adapted, and extended by the author for personal learning and reference. This repository is intended for **educational purposes only** and is not affiliated with or endorsed by Udemy or the course instructors.
+
+---
+
+## Acknowledgements
+
+This repository was built as part of the learning journey through various **Udemy courses**, including:
+
+- **Machine Learning & MLOps Bootcamp** — Core ML algorithms, end-to-end pipelines, deployment strategies
+- **Deep Learning & Neural Networks** — ANN, CNN, RNN, LSTM, Transformers, GANs
+- **NLP & Generative AI** — Text processing, LangChain, OpenAI integration
+
+Special thanks to the **Udemy instructors and community** whose course content provided the foundational knowledge and project inspiration for this work.
+
+> _All implementations, extensions, additional projects, and documentation are original work by the author._
 
 ---
 
