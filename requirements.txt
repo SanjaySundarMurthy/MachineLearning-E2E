@@ -1,0 +1,31 @@
+# Core Data Science
+numpy
+pandas
+matplotlib
+seaborn
+scipy
+
+# Machine Learning
+scikit-learn
+xgboost
+statsmodels
+
+# Deep Learning
+tensorflow
+keras
+
+# NLP
+nltk
+
+# Image Processing
+opencv-python
+Pillow
+
+# Web Frameworks (for deployment projects)
+flask
+streamlit
+
+# Jupyter
+jupyter
+ipykernel
+notebook

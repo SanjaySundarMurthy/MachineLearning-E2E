@@ -1,0 +1,102 @@
+name: workflow
+on: 
+    push: 
+        branches:
+            - main
+        paths-ignore: 
+            - "Readme.md"
+
+jobs:
+    integration:
+        name: Continuous Integration
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Lint Code
+              run: echo "Linting the code "
+
+            - name: Unit Test
+              run: echo "Run Unit tests"
+    build-and-push-ECR-images:
+        name: Build and push ECR images
+        needs: integration
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+            - name: Install Utilities
+              run: |
+                sudo apt-get update -y && apt-get install -y awscli
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v1
+              with:
+                aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID  }}
+                aws-secret-access-key: ${{ secrets.AWS.SECRET.ACCESS.KEY }}
+                aws-region: ${{secrets.AWS_REGION }}
+            
+            - name: Login to AMAZON
+              id: login-ecr
+              uses: aws-actions/amazon-ecr-login@v1
+            
+            - name: Build, Tag , and Push Images to Amazon ECR
+              id: build-image
+              env: 
+                ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+                ECR_REPOSITORY: ${{ secrets.ECR_RESPOSITORY_NAME }}
+                IMAGE_TAG: latest
+              run: |
+                echo "Building, Tagging and Pushing Images to Amazon ECR"
+                docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+                docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+                echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+    continuous-Deployment:
+        name: Continuous Deployment
+        needs: build-and-push-ECR-images
+        runs-on: self-hosted
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+            - name: Configure AWS-credentials
+              uses: aws-actions/configure-aws-credentials@v1
+              with:
+                aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+                aws-secret-access-key: ${{ secrets.AWS.SECRET.ACCESS.KEY }}
+                aws-region: ${{secrets.AWS_REGION }}
+            - name: Login to Amazon ECR
+              id: login-ecr
+              uses: aws-actions/amazon-ecr-login@v1
+            
+            - name: Pull Latest images from ECR
+              id: pull-latest-image
+              env:
+                ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+                ECR_REPOSITORY: ${{ secrets.ECR_RESPOSITORY_NAME }}
+                IMAGE_TAG: latest
+              run: |
+                    echo "Pulling latest images from Amazon ECR"
+                    docker pull $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+            - name: Run Docker Image to Serve Users
+              env:
+                ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+                ECR_REPOSITORY: ${{ secrets.ECR_RESPOSITORY_NAME }}
+              run: |
+                 echo "Running Docker Image to Serve Users"
+                 docker run -p 8080:8080 --name=Mltest $ECR_REGISTRY/$ECR_REPOSITORY:latest
+            - name: Clean Previous images and Containers
+              run: |
+                echo "Cleaning Previous images and Containers"
+                docker system prune -f
+
+            
+
+
+
+
+
+
+
+
+
+description: "AWS deploy using github actions ML model"

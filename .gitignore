@@ -1,0 +1,82 @@
+
+# ========================
+# Python
+# ========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+*.manifest
+*.spec
+
+# ========================
+# Virtual Environments
+# ========================
+.venv/
+venv/
+ENV/
+env/
+
+# ========================
+# Jupyter Notebook
+# ========================
+.ipynb_checkpoints/
+*.ipynb_tmp
+
+# ========================
+# IDE / Editor
+# ========================
+.codegpt/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ========================
+# ML Artifacts & Models
+# ========================
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+*.joblib
+*.model
+artifacts/
+logs/
+mlruns/
+
+# ========================
+# Data (large files)
+# ========================
+*.zip
+*.tar.gz
+*.rar
+
+# ========================
+# OS Files
+# ========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ========================
+# Misc
+# ========================
+*.dll
+*.exe
+*.log
+
+# ========================
+# Environment / Secrets
+# ========================
+.env
+*.env
+!.env.example
