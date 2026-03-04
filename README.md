@@ -5,13 +5,13 @@
   <img src="https://img.shields.io/badge/LangChain-OpenAI-412991?logo=openai&logoColor=white" alt="LangChain">
   <img src="https://img.shields.io/badge/Pandas-150458?logo=pandas&logoColor=white" alt="Pandas">
   <img src="https://img.shields.io/badge/NumPy-013243?logo=numpy&logoColor=white" alt="NumPy">
-  <img src="https://img.shields.io/badge/Projects-50%2B-brightgreen" alt="Projects">
+  <img src="https://img.shields.io/badge/Projects-70%2B-brightgreen" alt="Projects">
   <img src="https://img.shields.io/badge/License-MIT-green" alt="License">
 </p>
 
 # Machine Learning A-to-Z
 
-> A comprehensive, hands-on repository covering the **entire Machine Learning & AI spectrum** — from foundational statistics through supervised/unsupervised learning, NLP, deep learning (ANN, CNN, RNN, LSTM), recommendation systems, ensemble methods, **Generative AI (LangChain + OpenAI)**, to **production-grade end-to-end ML pipelines with CI/CD, Docker, and AWS deployment**.
+> A comprehensive, hands-on repository covering the **entire Machine Learning & AI spectrum** — from foundational statistics through supervised/unsupervised learning, NLP, deep learning (ANN, CNN, RNN, LSTM, Transformers, GANs, Autoencoders, RL), recommendation systems, ensemble methods (XGBoost, LightGBM, CatBoost), model explainability (SHAP, LIME), **Generative AI (LangChain + OpenAI)**, to **production-grade end-to-end ML pipelines with MLflow, CI/CD, Docker, and AWS deployment**.
 
 ---
 
@@ -31,7 +31,7 @@
 
 ## Overview
 
-This repository is a curated collection of **50+ notebooks, scripts, and applications** spanning every major area of machine learning and AI. Each module is self-contained with theory, implementation, visualization, and real-world datasets.
+This repository is a curated collection of **70+ notebooks, scripts, and applications** spanning every major area of machine learning and AI. Each module is self-contained with theory, implementation, visualization, and real-world datasets.
 
 ### What makes this repo stand out?
 
@@ -58,6 +58,10 @@ Machine-Learning-A-to-Z/
 │   ├── Hypothesis_Testing.ipynb                # Chi-Square, T-tests, Correlation
 │   ├── Feature_Engineering_and_Selection.ipynb # Encoding, Scaling, RFE, Lasso
 │   ├── Cross_Validation_Techniques.ipynb       # K-Fold, Stratified, Nested CV
+│   ├── EDA_Masterclass.ipynb                   # ★ Complete EDA reference (distributions, outliers, correlations)
+│   ├── Model_Explainability_SHAP_LIME.ipynb    # ★ SHAP, LIME, Permutation Importance, PDP
+│   ├── Hyperparameter_Tuning_Guide.ipynb       # ★ GridSearch, RandomSearch, Optuna Bayesian
+│   ├── Bias_Variance_Learning_Curves.ipynb     # ★ Learning curves, validation curves, model complexity
 │   └── Python_Assignments/                     # 10 Q&A notebooks (NumPy, Pandas, OOP, SQLite, Generators)
 │
 ├── 02_Regression/                              # Regression algorithms & projects
@@ -77,7 +81,7 @@ Machine-Learning-A-to-Z/
 │   ├── Decision_Tree/                          # Iris dataset classification
 │   ├── KNN_Classification/                     # Optimal K, distance metrics, scaling
 │   ├── Naive_Bayes/                            # Gaussian, Multinomial, Bernoulli NB
-│   ├── SVM_Classification/                     # SVM classification projects
+│   ├── SVM_Classification/                     # ★ All 4 kernels, C/Gamma tuning, decision boundaries
 │   ├── Random_Forest/                          # Wine dataset, OOB, feature importance
 │   ├── Diabetes_SVM_Prediction/                # SVM on diabetes dataset
 │   ├── Heart_Disease_Prediction/               # Heart disease classification
@@ -90,13 +94,16 @@ Machine-Learning-A-to-Z/
 │   ├── KMeans_Clustering/                      # make_blobs + Silhouette Score
 │   ├── DBSCAN_Clustering/                      # Density-based on make_moons
 │   ├── Hierarchical_Clustering/                # Agglomerative + PCA on Iris
-│   └── Customer_Segmentation/                  # Mall Customers K-Means
+│   ├── Customer_Segmentation/                  # Mall Customers K-Means
+│   └── Anomaly_Detection/                      # ★ Isolation Forest, LOF, One-Class SVM
 │
 ├── 05_Dimensionality_Reduction/                # Feature reduction techniques
-│   └── PCA_Analysis/                           # PCA on Breast Cancer dataset
+│   ├── PCA_Analysis/                           # PCA on Breast Cancer dataset
+│   └── tSNE_UMAP/                              # ★ PCA vs t-SNE vs UMAP comparison on digits
 │
 ├── 06_Ensemble_Methods/                        # Advanced ensemble techniques
-│   └── Ensemble_Techniques.ipynb               # Bagging, Boosting, Stacking, Voting
+│   ├── Ensemble_Techniques.ipynb               # Bagging, Boosting, Stacking, Voting
+│   └── Gradient_Boosting_XGBoost_LightGBM_CatBoost.ipynb  # ★ Head-to-head comparison
 │
 ├── 07_NLP/                                     # Natural Language Processing
 │   ├── Spam_Detection/                         # NLTK + TF-IDF text classification
@@ -107,17 +114,25 @@ Machine-Learning-A-to-Z/
 │   ├── ANN_Salary_Regression/                  # ANN regression + Streamlit app
 │   ├── Neural_Network_Breast_Cancer/           # Dense NN classification
 │   ├── MNIST_Digit_Classification/             # TensorFlow/Keras CNN
+│   ├── CNN_Image_Classification/               # ★ CIFAR-10 Conv2D + BatchNorm + Data Augmentation
 │   ├── SimpleRNN_IMDB_Sentiment/               # SimpleRNN + Streamlit app
 │   ├── LSTM_Next_Word_Prediction/              # LSTM + Streamlit app (Hamlet)
 │   ├── Word_Embeddings/                        # One-hot + Keras Embedding layers
 │   ├── Image_Processing_for_DL/                # PIL, OpenCV, matplotlib.image
-│   └── Hybrid_Model_Stock_Prediction/          # Linear Regression + LSTM (Apple stock)
+│   ├── Hybrid_Model_Stock_Prediction/          # Linear Regression + LSTM (Apple stock)
+│   ├── DL_Regularization_Optimization/         # ★ Dropout, BatchNorm, L2, LR Scheduling
+│   ├── Transfer_Learning/                      # ★ MobileNetV2 feature extraction vs fine-tuning
+│   ├── Autoencoders/                           # ★ Vanilla AE, Denoising AE, VAE (MNIST)
+│   ├── GANs/                                   # ★ Simple GAN + DCGAN (MNIST)
+│   ├── Transformer_From_Scratch/               # ★ Self-attention, Multi-Head, Positional Encoding
+│   └── Reinforcement_Learning/                 # ★ Q-Learning, DQN, GridWorld environment
 │
 ├── 09_Recommendation_Systems/                  # Recommender engines
-│   └── Movie_Recommendation/                  # Content-based (TF-IDF + Cosine Similarity)
+│   ├── Movie_Recommendation/                  # Content-based (TF-IDF + Cosine Similarity)
+│   └── Collaborative_Filtering/                # ★ User-Based CF, Item-Based CF, SVD
 │
 ├── 10_End_to_End_ML_Pipeline/                  # Production ML
-│   └── Student_Performance_Prediction/         # Full production pipeline
+│   ├── Student_Performance_Prediction/         # Full production pipeline
 │       ├── app.py / application.py             # Flask web application
 │       ├── Dockerfile                          # Docker containerization
 │       ├── .github/workflows/main.yml          # CI/CD (GitHub Actions → AWS ECR)
@@ -126,6 +141,7 @@ Machine-Learning-A-to-Z/
 │       ├── src/pipeline/                       # Prediction pipeline
 │       ├── notebook/                           # EDA & model experimentation
 │       └── templates/                          # HTML templates
+│   └── MLflow_Experiment_Tracking/              # ★ MLflow logging, model registry, experiment comparison
 │
 ├── 11_From_Scratch_Implementations/            # Algorithms without libraries
 │   ├── Linear_Regression.py                    # Gradient descent implementation
@@ -183,16 +199,16 @@ graph LR
 
 | Domain | Algorithms / Topics | Projects |
 |--------|-------------------|----------|
-| **Foundations** | Python, Pandas, Hypothesis Testing, Feature Engineering, Cross Validation | 5 notebooks |
+| **Foundations** | Python, Pandas, Hypothesis Testing, Feature Engineering, Cross Validation, EDA, SHAP/LIME, Hyperparameter Tuning, Bias-Variance | 9 notebooks |
 | **Regression** | Simple LR, Multiple LR, Polynomial LR, SVR, Lasso, Ridge, ElasticNet, XGBoost, ARIMA | 10 projects |
-| **Classification** | Logistic Regression, Decision Tree, KNN, Naive Bayes, SVM, Random Forest, XGBoost | 12 projects |
-| **Clustering** | K-Means, DBSCAN, Hierarchical (Agglomerative) | 4 projects |
-| **Dim. Reduction** | PCA | 1 project |
-| **Ensemble** | Bagging, Random Forest, AdaBoost, Gradient Boosting, Voting, Stacking | 1 comprehensive notebook |
+| **Classification** | Logistic Regression, Decision Tree, KNN, Naive Bayes, SVM (all kernels), Random Forest, XGBoost | 12 projects |
+| **Clustering** | K-Means, DBSCAN, Hierarchical (Agglomerative), Anomaly Detection (IF, LOF, OCSVM) | 5 projects |
+| **Dim. Reduction** | PCA, t-SNE, UMAP | 2 projects |
+| **Ensemble** | Bagging, Random Forest, AdaBoost, Gradient Boosting, XGBoost, LightGBM, CatBoost, Voting, Stacking | 2 notebooks |
 | **NLP** | TF-IDF, NLTK, Text Classification, LSTM Language Model | 2 projects |
-| **Deep Learning** | ANN, Dense NN, CNN (MNIST), SimpleRNN, LSTM, Word Embeddings, Image Processing | 9 projects |
-| **Recommenders** | Content-Based Filtering, Cosine Similarity, Streamlit App | 1 project |
-| **Production** | Flask, Docker, GitHub Actions CI/CD, AWS Elastic Beanstalk, Logging | 1 full E2E project |
+| **Deep Learning** | ANN, Dense NN, CNN (CIFAR-10), SimpleRNN, LSTM, Word Embeddings, Transfer Learning, Autoencoders, VAE, GANs, DCGAN, Transformer, Reinforcement Learning (Q-Learning, DQN), Regularization & Optimization | 16 projects |
+| **Recommenders** | Content-Based Filtering, Collaborative Filtering (User/Item CF, SVD), Cosine Similarity | 2 projects |
+| **Production** | Flask, Docker, GitHub Actions CI/CD, AWS Elastic Beanstalk, MLflow Experiment Tracking, Logging | 2 projects |
 | **From Scratch** | Linear Regression, Logistic Regression, SVM (gradient descent) | 3 implementations |
 | **Generative AI** | LangChain, OpenAI GPT, Sequential Chains, Prompt Engineering | 1 project |
 | **Theory Notes** | Statistics, Probability, ML Theory, Deep Learning Theory | 27 PDF references |
@@ -264,15 +280,22 @@ A production-grade ML project predicting student math scores:
 - **AWS Elastic Beanstalk** deployment configuration
 - **Custom logging & exception handling**
 
-### Deep Learning Suite (9 Projects)
+### Deep Learning Suite (16 Projects)
 Comprehensive neural network coverage:
 - **ANN Churn Classification**: Bank customer churn prediction with Streamlit app
 - **ANN Salary Regression**: Salary prediction with regression ANN + Streamlit
+- **CNN Image Classification**: CIFAR-10 with Conv2D, BatchNorm, Data Augmentation
 - **SimpleRNN IMDB Sentiment**: Sentiment analysis with Streamlit deployment
 - **LSTM Next Word Prediction**: Hamlet-trained language model with Streamlit
 - **Word Embeddings**: One-hot encoding vs Keras Embedding layers
 - **MNIST Digit Classification**: CNN with TensorFlow/Keras
 - **Hybrid Model**: Linear Regression + LSTM for Apple stock prediction
+- **Transfer Learning**: MobileNetV2 feature extraction vs fine-tuning
+- **Autoencoders & VAE**: Vanilla, Denoising, Variational Autoencoders on MNIST
+- **GANs & DCGAN**: Generative Adversarial Networks for image generation
+- **Transformer From Scratch**: Self-attention, Multi-Head Attention, Positional Encoding
+- **Reinforcement Learning**: Q-Learning + DQN on custom GridWorld
+- **DL Regularization**: Dropout, BatchNorm, L2, Learning Rate Scheduling comparison
 
 ### MCQ Generator (Generative AI)
 LangChain + OpenAI powered application:
@@ -299,13 +322,16 @@ Core ML algorithms implemented using only NumPy:
 | Category | Technologies |
 |----------|-------------|
 | **Core** | Python, NumPy, Pandas, Matplotlib, Seaborn, SciPy |
-| **ML** | scikit-learn, XGBoost, statsmodels |
+| **ML** | scikit-learn, XGBoost, LightGBM, CatBoost, statsmodels, Optuna |
 | **Deep Learning** | TensorFlow, Keras |
+| **Explainability** | SHAP, LIME |
 | **NLP** | NLTK, TF-IDF |
 | **Generative AI** | LangChain, OpenAI GPT, LLM Chains |
 | **Image Processing** | OpenCV, PIL/Pillow |
+| **Visualization** | UMAP, t-SNE, Seaborn, Matplotlib |
 | **Deployment** | Flask, Streamlit |
-| **DevOps** | Docker, GitHub Actions CI/CD, AWS Elastic Beanstalk |
+| **MLOps** | MLflow, Docker, GitHub Actions CI/CD, AWS Elastic Beanstalk |
+| **RL** | Gymnasium (OpenAI Gym) |
 | **Data** | CSV, Pickle, JSON |
 
 ---
@@ -321,13 +347,11 @@ Contributions are welcome! Here's how:
 5. Open a Pull Request
 
 ### Contribution Ideas
-- [ ] Add Reinforcement Learning module
-- [ ] Add Transfer Learning examples (ResNet, VGG, BERT)
-- [ ] Add GANs (Generative Adversarial Networks)
-- [ ] Add Transformer architecture implementation
-- [ ] Add MLflow / Weights & Biases experiment tracking
-- [ ] Add unit tests for from-scratch implementations
 - [ ] Add RAG (Retrieval-Augmented Generation) project
+- [ ] Add unit tests for from-scratch implementations
+- [ ] Add Weights & Biases integration
+- [ ] Add advanced NLP with Hugging Face Transformers
+- [ ] Add time-series forecasting with Prophet
 
 ---
 

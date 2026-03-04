@@ -8,11 +8,21 @@ scipy
 # Machine Learning
 scikit-learn
 xgboost
+lightgbm
+catboost
 statsmodels
+optuna
+
+# Model Explainability
+shap
+lime
 
 # Deep Learning
 tensorflow
 keras
+
+# Reinforcement Learning
+gymnasium
 
 # NLP
 nltk
@@ -20,6 +30,12 @@ nltk
 # Image Processing
 opencv-python
 Pillow
+
+# Visualization / Dim. Reduction
+umap-learn
+
+# MLOps
+mlflow
 
 # Web Frameworks (for deployment projects)
 flask
